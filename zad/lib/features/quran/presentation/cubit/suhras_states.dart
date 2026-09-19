@@ -2,6 +2,7 @@
 
 import 'package:zad/features/quran/data/models/suhras_model.dart';
 
+
 sealed class SuhrasStates {}
 
 class SuhrasInitial extends SuhrasStates {}

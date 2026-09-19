@@ -1,4 +1,6 @@
-import 'package:zad/features/AzkarAndDua/data/models/azkar_model.dart';
+
+
+import 'package:zad/features/AzkarAndDua/data_source/models/azkar_model.dart';
 
 sealed class AzkarStates {}
 

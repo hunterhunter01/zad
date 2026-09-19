@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zad/features/AzkarAndDua/data/data/azkar_categories_data_source.dart';
+import 'package:zad/features/AzkarAndDua/data_source/data/azkar_categories_data_source.dart';
+
 import 'package:zad/features/AzkarAndDua/presentation/cubit/azkar_categories_state.dart';
 
 class AzkarCategoriesCubit extends Cubit<AzkarCategoriesState> {

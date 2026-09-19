@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:zad/features/AzkarAndDua/data/models/azkar_categories_model.dart';
+import 'package:zad/features/AzkarAndDua/data_source/models/azkar_categories_model.dart';
+
 
 class AzkarCategoriesDataSource {
   static final Dio dio = Dio(BaseOptions(baseUrl: 'https://api.islamic.app/v1'));

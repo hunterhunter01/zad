@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zad/features/quran/data/data/suhras_data_source.dart';
-import 'package:zad/features/quran/data/models/suhras_model.dart';
-import 'package:zad/features/quran/persintaion/cubit/suhras_states.dart';
+import 'package:zad/features/quran/data_source/data/suhras_data_source.dart';
+import 'package:zad/features/quran/presentation/cubit/suhras_states.dart';
+
 
 class SuhrasCubit extends Cubit<SuhrasStates> {
   SuhrasCubit() : super(SuhrasInitial());

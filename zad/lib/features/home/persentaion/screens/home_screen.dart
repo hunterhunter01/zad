@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zad/features/AzkarAndDua/presentation/screens/azkar_categories_screen.dart';
 import 'package:zad/features/AzkarAndDua/presentation/screens/dua_categories_screen.dart';
-import 'package:zad/features/asmaaAllah/persentaion/screens/asmaa_allah_screen.dart';
+import 'package:zad/features/asmaaAllah/presentation/screens/asmaa_allah_screen.dart';
+
 import 'package:zad/features/quran/persintaion/screens/suhras_screen.dart';
 
 class HomeScreen extends StatelessWidget {

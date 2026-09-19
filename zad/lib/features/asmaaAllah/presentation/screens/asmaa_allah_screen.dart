@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zad/features/AzkarAndDua/presentation/cubit/azkar_categories_state.dart';
-import 'package:zad/features/asmaaAllah/persentaion/cubit/asmaa_allah_cubit.dart';
-import 'package:zad/features/asmaaAllah/persentaion/cubit/asmaa_allah_states.dart';
+import 'package:zad/features/asmaaAllah/presentation/cubit/asmaa_allah_cubit.dart';
+import 'package:zad/features/asmaaAllah/presentation/cubit/asmaa_allah_states.dart';
+
 
 class AsmaaAllahScreen extends StatefulWidget {
   AsmaaAllahScreen({super.key});

@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zad/features/asmaaAllah/data/data/asmaa_allah_data_source.dart';
-import 'package:zad/features/asmaaAllah/persentaion/cubit/asmaa_allah_states.dart';
+import 'package:zad/features/asmaaAllah/data_source/data/asmaa_allah_data_source.dart';
+
+import 'package:zad/features/asmaaAllah/presentation/cubit/asmaa_allah_states.dart';
+
 
 class AsmaaAllahCubit extends Cubit<AsmaaAllahStates> {
   AsmaaAllahCubit() : super(AsmaaAllahInitial());

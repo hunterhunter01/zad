@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:zad/features/quran/persintaion/cubit/suhras_cubit.dart';
-import 'package:zad/features/quran/persintaion/cubit/suhras_states.dart';
+import 'package:zad/features/quran/presentation/cubit/suhras_cubit.dart';
+import 'package:zad/features/quran/presentation/cubit/suhras_states.dart';
 
 class SuhrasScreen extends StatelessWidget {
   const SuhrasScreen({super.key});

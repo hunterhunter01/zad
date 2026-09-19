@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:zad/features/AzkarAndDua/data/data/azkar_data_source.dart';
+import 'package:zad/features/AzkarAndDua/data_source/data/azkar_data_source.dart';
+
 import 'package:zad/features/AzkarAndDua/presentation/cubit/azkar_states.dart';
 
 class AzkarCubit extends Cubit<AzkarStates> {
