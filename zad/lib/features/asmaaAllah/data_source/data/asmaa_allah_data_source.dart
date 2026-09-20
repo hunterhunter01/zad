@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:zad/features/asmaaAllah/data/model/asmaa_Allah_model.dart';
+import 'package:zad/features/asmaaAllah/data_source/model/asmaa_allah_model.dart';
 
 
 class AsmaaAllahDataSource {

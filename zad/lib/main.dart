@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(360, 690),
+      minTextAdapt: true,
+      
+
       child: MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen()),
     );
   }

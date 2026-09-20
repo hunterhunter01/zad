@@ -18,13 +18,14 @@ class ZikrScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffFAF8F3),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding:  EdgeInsets.all(10.r),
             child: Text(
               title,
               style: GoogleFonts.amiri(
-                fontSize: 24,
+                fontSize: 21.sp,
                 fontWeight: .w700,
                 color: Colors.white,
               ),
@@ -49,15 +50,15 @@ class ZikrScreen extends StatelessWidget {
             if (state is AzkarSuccess) {
               return ListView.separated(
                 itemBuilder: (context, index) => Card(
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10.r),
                   child: Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding:  EdgeInsets.all(20.r),
                     child: Text(
                       state.azkarList[index].text,
                       textAlign: .right,
                       style: GoogleFonts.openSans(
                         color: Color(0xff1C1917),
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: .w500,
                       ),
                     ),

@@ -1,7 +1,8 @@
 
 
-import 'package:zad/features/quran/data/models/suhras_model.dart';
 
+
+import 'package:zad/features/quran/data_source/models/suhras_model.dart';
 
 sealed class SuhrasStates {}
 

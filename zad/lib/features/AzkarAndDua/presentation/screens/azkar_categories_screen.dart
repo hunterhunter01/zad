@@ -14,13 +14,14 @@ class AzkarCategoriesScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffFAF8F3),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding:  EdgeInsets.all(10.r),
             child: Text(
               'الأذكار',
               style: GoogleFonts.amiri(
-                fontSize: 22,
+                fontSize: 22.sp,
                 fontWeight: .w700,
                 color: Colors.white,
               ),
@@ -48,13 +49,13 @@ class AzkarCategoriesScreen extends StatelessWidget {
                   .where((c) => !c.title.contains('دعاء'))
                   .toList();
               return GridView.builder(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(15.r),
                 itemCount: azkarList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 14,
-                  crossAxisSpacing: 14,
-                   childAspectRatio: 0.85,
+                  mainAxisSpacing: 14.h,
+                  crossAxisSpacing: 14.w,
+                   childAspectRatio: 0.64,
                 ),
                 itemBuilder: (context, index) {
                   return InkWell(
@@ -70,18 +71,18 @@ class AzkarCategoriesScreen extends StatelessWidget {
                       );
                     },
                     child: Container(
-                      padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15.r),
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: .circular(32),
-                        border: Border.all(color: Color(0xffE8E3D8), width: 1),
+                        borderRadius: .circular(32.r),
+                        border: Border.all(color: Color(0xffE8E3D8), width: 1.w),
                       ),
                       child: Column(
                         crossAxisAlignment: .center,
-                        spacing: 7,
+                        spacing: 7.h,
                         children: [
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10.r),
                             decoration: BoxDecoration(
                               color: Color(0xffF3E3FD),
                               shape: BoxShape.circle,
@@ -89,7 +90,7 @@ class AzkarCategoriesScreen extends StatelessWidget {
                             child: Text(
                               '${azkarList[index].count}',
                               style: GoogleFonts.openSans(
-                                fontSize: 12,
+                                fontSize: 12.sp,
                                 color: Color(0xff9C27B0),
                                 fontWeight: .w600,
                               ),
@@ -99,7 +100,7 @@ class AzkarCategoriesScreen extends StatelessWidget {
                             textAlign: .center,
                             azkarList[index].title,
                             style: GoogleFonts.amiri(
-                              fontSize: 22,
+                              fontSize: 22.sp,
                               fontWeight: .w700,
                               color: Color(0xff1C1917),
                             ),
@@ -107,8 +108,9 @@ class AzkarCategoriesScreen extends StatelessWidget {
                           Text(
                             textAlign: .center,
                             azkarList[index].translate,
+                            
                             style: GoogleFonts.openSans(
-                              fontSize: 11,
+                              fontSize: 11.sp,
                               fontWeight: .w400,
                               color: Color(0xff8A8880),
                             ),

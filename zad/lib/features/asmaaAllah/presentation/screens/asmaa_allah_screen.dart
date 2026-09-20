@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zad/features/AzkarAndDua/presentation/cubit/azkar_categories_state.dart';
 import 'package:zad/features/asmaaAllah/presentation/cubit/asmaa_allah_cubit.dart';
@@ -21,13 +22,14 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
     return Scaffold(
       backgroundColor: Color(0xffFAF8F3),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding:  EdgeInsets.all(10.0.r),
             child: Text(
               'أسماء الله الحسنى',
               style: GoogleFonts.amiri(
-                fontSize: 24,
+                fontSize: 24.sp,
                 fontWeight: .w700,
                 color: Colors.white,
               ),
@@ -51,12 +53,12 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
             }
             if (state is AsmaaAllahSuccess) {
               return GridView.builder(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(20.r),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 14,
-                  crossAxisSpacing: 14,
-                  childAspectRatio: 1,
+                  mainAxisSpacing: 14.h,
+                  crossAxisSpacing: 14.w,
+                  childAspectRatio: 0.75,
                 ),
                 itemCount: state.namesList.length,
                 itemBuilder: (context, index) {
@@ -68,27 +70,27 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
                       });
                     },
                     child: Container(
-                      padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15.r),
                       decoration: BoxDecoration(
                         color: isSelected ? Color(0xff1B5E40) : Colors.white,
-                        borderRadius: .circular(32),
-                        border: Border.all(color: Color(0xffE8E3D8), width: 1),
+                        borderRadius: .circular(32.r),
+                        border: Border.all(color: Color(0xffE8E3D8), width: 1.w),
                       ),
                       child: Column(
-                        spacing: 7,
+                        spacing: 7.h,
                         children: [
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10.r),
                             decoration: BoxDecoration(
                               color: isSelected?Colors.white.withOpacity(0.15): Color(0xffF3E3FD),
                               
-                              border: .all(width: 1,color: Colors.white.withOpacity(0.35)),
+                              border: .all(width: 1.w,color: Colors.white.withOpacity(0.35)),
                               shape: BoxShape.circle,
                             ),
                             child: Text(
                               '${state.namesList[index].number}',
                               style: GoogleFonts.openSans(
-                                fontSize: 12,
+                                fontSize: 12.sp,
                                 color:isSelected?Colors.white: Color(0xff9C27B0),
                                 fontWeight: .w600,
                               ),
@@ -96,8 +98,9 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
                           ),
                           Text(
                             state.namesList[index].name,
+                            textAlign: .center,
                             style: GoogleFonts.amiri(
-                              fontSize: 22,
+                              fontSize: 22.sp,
                               fontWeight: .w700,
                               color:isSelected?Colors.white: Color(0xff1C1917),
                             ),
@@ -105,15 +108,16 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
                           Text(
                             state.namesList[index].transliteration,
                             style: GoogleFonts.openSans(
-                              fontSize: 11,
+                              fontSize: 11.sp,
                               fontWeight: .w400,
                               color: Color(0xff8A8880),
                             ),
                           ),
                           Text(
-                            isSelected? state.namesList[index].meaning: '',
+                             isSelected? state.namesList[index].meaning : '' ,
+                            textAlign: .center,
                             style: GoogleFonts.openSans(
-                              fontSize: 10,
+                              fontSize: 10.sp,
                               fontWeight: isSelected? .w600 : .w400,
                               color:isSelected? Colors.grey: Color(0xff8A8880),
                             ),
