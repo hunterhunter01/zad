@@ -3,12 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zad/features/AzkarAndDua/presentation/cubit/azkar_categories_state.dart';
+import 'package:zad/features/asmaaAllah/data_source/model/asmaa_allah_model.dart';
 import 'package:zad/features/asmaaAllah/presentation/cubit/asmaa_allah_cubit.dart';
 import 'package:zad/features/asmaaAllah/presentation/cubit/asmaa_allah_states.dart';
+import 'package:zad/features/asmaaAllah/presentation/widgets/asmaa_allah_card.dart';
 
 
 class AsmaaAllahScreen extends StatefulWidget {
-  AsmaaAllahScreen({super.key});
+ const AsmaaAllahScreen({super.key});
 
   @override
   State<AsmaaAllahScreen> createState() => _AsmaaAllahScreenState();
@@ -23,6 +25,7 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
       backgroundColor: Color(0xffFAF8F3),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
+        toolbarHeight: 50.h,
         actions: [
           Padding(
             padding:  EdgeInsets.all(10.0.r),
@@ -69,62 +72,7 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
                         selectedIndex = isSelected ? -1 : index;
                       });
                     },
-                    child: Container(
-                      padding: EdgeInsets.all(15.r),
-                      decoration: BoxDecoration(
-                        color: isSelected ? Color(0xff1B5E40) : Colors.white,
-                        borderRadius: .circular(32.r),
-                        border: Border.all(color: Color(0xffE8E3D8), width: 1.w),
-                      ),
-                      child: Column(
-                        spacing: 7.h,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10.r),
-                            decoration: BoxDecoration(
-                              color: isSelected?Colors.white.withOpacity(0.15): Color(0xffF3E3FD),
-                              
-                              border: .all(width: 1.w,color: Colors.white.withOpacity(0.35)),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Text(
-                              '${state.namesList[index].number}',
-                              style: GoogleFonts.openSans(
-                                fontSize: 12.sp,
-                                color:isSelected?Colors.white: Color(0xff9C27B0),
-                                fontWeight: .w600,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            state.namesList[index].name,
-                            textAlign: .center,
-                            style: GoogleFonts.amiri(
-                              fontSize: 22.sp,
-                              fontWeight: .w700,
-                              color:isSelected?Colors.white: Color(0xff1C1917),
-                            ),
-                          ),
-                          Text(
-                            state.namesList[index].transliteration,
-                            style: GoogleFonts.openSans(
-                              fontSize: 11.sp,
-                              fontWeight: .w400,
-                              color: Color(0xff8A8880),
-                            ),
-                          ),
-                          Text(
-                             isSelected? state.namesList[index].meaning : '' ,
-                            textAlign: .center,
-                            style: GoogleFonts.openSans(
-                              fontSize: 10.sp,
-                              fontWeight: isSelected? .w600 : .w400,
-                              color:isSelected? Colors.grey: Color(0xff8A8880),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: AsmaaAllahCard(isSelected: isSelected,model: AsmaaAllahModel(number: state.namesList[index].number, name: state.namesList[index].name, transliteration: state.namesList[index].transliteration, meaning: state.namesList[index].meaning),),
                   );
                 },
               );
@@ -136,3 +84,4 @@ class _AsmaaAllahScreenState extends State<AsmaaAllahScreen> {
     );
   }
 }
+

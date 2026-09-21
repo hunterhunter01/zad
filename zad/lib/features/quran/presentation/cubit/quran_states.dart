@@ -1,5 +1,6 @@
 import 'package:zad/features/quran/data_source/models/quran_model.dart';
 
+
 sealed class QuranStates {}
 
 class QuranInitial extends QuranStates {}

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zad/features/AzkarAndDua/data_source/models/azkar_categories_model.dart';
 import 'package:zad/features/AzkarAndDua/presentation/cubit/azkar_categories_cubit.dart';
 import 'package:zad/features/AzkarAndDua/presentation/cubit/azkar_categories_state.dart';
 import 'package:zad/features/AzkarAndDua/presentation/screens/zikr_screen.dart';
+import 'package:zad/features/AzkarAndDua/presentation/widgets/azkar_and_dua_category_card.dart';
 
 class DuaCategoriesScreen extends StatelessWidget {
   const DuaCategoriesScreen({super.key});
@@ -31,7 +33,7 @@ class DuaCategoriesScreen extends StatelessWidget {
         backgroundColor: Color(0xff1B5E40),
       ),
       body: BlocProvider(
-        create: (context) => AzkarCategoriesCubit()..getcategories(),
+        create: (context) => AzkarCategoriesCubit()..getDuaCategories(),
         child: BlocBuilder<AzkarCategoriesCubit, AzkarCategoriesState>(
           builder: (context, state) {
             if (state is AzkarCategoriesLoading) {
@@ -44,11 +46,11 @@ class DuaCategoriesScreen extends StatelessWidget {
               return Text(state.error);
             }
             if (state is AzkarCategoriesSuccess) {
-              final duaList = state.categories.where((c) => c.title.contains('دعاء')).toList();
+              
               
               return GridView.builder(
                 padding: EdgeInsets.all(15.r),
-                itemCount: duaList.length,
+                itemCount: state.categories.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 14.h,
@@ -62,59 +64,14 @@ class DuaCategoriesScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ZikrScreen(
-                            category: duaList[index].number,
-                            title: duaList[index].title,
+                            category: state.categories[index].number,
+                            title: state.categories[index].title,
                           ),
                         ),
                       );
                     },
-                    child: Container(
-                      padding: EdgeInsets.all(15.r),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: .circular(32.r),
-                        border: Border.all(color: Color(0xffE8E3D8), width: 1.w),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: .center,
-                        spacing: 7.h,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10.r),
-                            decoration: BoxDecoration(
-                              color: Color(0xffF3E3FD),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Text(
-                              '${duaList[index].count}',
-                              style: GoogleFonts.openSans(
-                                fontSize: 12.sp,
-                                color: Color(0xff9C27B0),
-                                fontWeight: .w600,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            textAlign: .center,
-                            duaList[index].title,
-                            style: GoogleFonts.amiri(
-                              fontSize: 22.sp,
-                              fontWeight: .w700,
-                              color: Color(0xff1C1917),
-                            ),
-                          ),
-                          Text(
-                            textAlign: .center,
-                            duaList[index].translate,
-                            style: GoogleFonts.openSans(
-                              fontSize: 11.sp,
-                              fontWeight: .w400,
-                              color: Color(0xff8A8880),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                     child: AzkarAndDuaCategoryCard(category: AzkarCategoryModel(number: state.categories[index].number, title: state.categories[index].title, count: state.categories[index].count, translate: state.categories[index].translate))
+                   
                   );
                 },
               );

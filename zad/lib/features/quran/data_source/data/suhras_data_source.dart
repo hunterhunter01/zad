@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:zad/features/quran/data_source/models/suhras_model.dart';
 
+
 class SuhrasDataSource {
   static final Dio dio = Dio(
     BaseOptions(baseUrl: 'https://api.islamic.app/v1'),

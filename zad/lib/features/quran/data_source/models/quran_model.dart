@@ -4,14 +4,14 @@ class QuranModel {
   final int hizb;
   final int chapterId;
   final String verseKey;
-  final bool preBasmallah;
+
 
   QuranModel({
     required this.text,
     required this.juz,
     required this.hizb,
     required this.chapterId,
-    required this.verseKey, required this.preBasmallah,
+    required this.verseKey,
   });
 
   factory QuranModel.fromjson(Map<String, dynamic> json) {
@@ -21,7 +21,7 @@ class QuranModel {
       hizb: json['hizb'] ?? 0,
       chapterId: json['chapter_id'] ?? 0,
       verseKey: json['verse_key'] ?? '',
-      preBasmallah: json['bismillah_pre']?? true
+      
     );
   }
 }

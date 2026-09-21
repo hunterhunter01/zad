@@ -8,6 +8,7 @@ import 'package:zad/features/quran/presentation/screens/suhras_screen.dart';
 
 
 
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     {'title': 'الأدعية', 'screen': DuaCategoriesScreen()},
     {'title': 'الأذكار', 'screen': AzkarCategoriesScreen()},
     {'title': 'أسماء الله الحسنى', 'screen': AsmaaAllahScreen()},
-    {'title': 'القرآن', 'screen': SuhrasScreen()},
+    {'title': 'القرآن الكريم', 'screen': SuhrasScreen()},
 
   ];
 

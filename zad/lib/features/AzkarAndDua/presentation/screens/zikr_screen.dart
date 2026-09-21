@@ -18,14 +18,17 @@ class ZikrScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffFAF8F3),
       appBar: AppBar(
+        toolbarHeight: 70.h,
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
+          
           Padding(
             padding:  EdgeInsets.all(10.r),
             child: Text(
               title,
+              textAlign: .right,
               style: GoogleFonts.amiri(
-                fontSize: 21.sp,
+                fontSize: 20.sp,
                 fontWeight: .w700,
                 color: Colors.white,
               ),

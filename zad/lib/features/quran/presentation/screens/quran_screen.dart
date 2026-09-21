@@ -9,35 +9,20 @@ class QuranScreen extends StatelessWidget {
   final int startPage;
   final int endPage;
   final String suhraName;
-  final String revelationPlace;
-  final int ayahsCount;
   final int suhraNumber;
+  final bool preBasmallah;
 
   const QuranScreen({
     super.key,
     required this.startPage,
     required this.endPage,
     required this.suhraName,
-    required this.revelationPlace,
-    required this.ayahsCount,
-    required this.suhraNumber,
+    required this.suhraNumber, required this.preBasmallah,
   });
 
-  int get resolvedEndPage {
-    if (startPage == endPage) {
-      if (suhraNumber == 90 ||
-          suhraNumber == 89 ||
-          suhraNumber == 88 ||
-          suhraNumber == 84) {
-        return startPage + 1;
-      }
-    }
-    return endPage;
-  }
 
   @override
   Widget build(BuildContext context) {
-    final int totalPages = resolvedEndPage - startPage + 1;
 
     return BlocProvider(
       create: (context) => QuranCubit()..getPage(startPage),
@@ -61,12 +46,11 @@ class QuranScreen extends StatelessWidget {
                 BlocBuilder<QuranCubit, QuranStates>(
                   builder: (context, state) {
                     if (state is QuranSuccess && state.ayahs.isNotEmpty) {
-                      final firstAyah = state.ayahs.first;
                       return Padding(
                         padding: EdgeInsets.symmetric(horizontal: 12.w),
                         child: Center(
                           child: Text(
-                            'جزء ${firstAyah.juz} - حزب ${firstAyah.hizb}',
+                            'جزء ${state.ayahs.first.juz} - حزب ${state.ayahs.first.hizb}',
                             style: GoogleFonts.amiri(
                               fontSize: 12.sp,
                               color: Colors.white,
@@ -75,17 +59,16 @@ class QuranScreen extends StatelessWidget {
                         ),
                       );
                     }
-                    return const SizedBox.shrink();
+                    return SizedBox();
                   },
                 ),
               ],
             ),
             body: PageView.builder(
               reverse: true,
-              itemCount: totalPages,
+              itemCount: endPage - startPage + 1,
               onPageChanged: (index) {
-                final currentPage = startPage + index;
-                context.read<QuranCubit>().getPage(currentPage);
+                context.read<QuranCubit>().getPage(startPage + index);
               },
               itemBuilder: (context, index) {
                 return BlocBuilder<QuranCubit, QuranStates>(
@@ -99,25 +82,14 @@ class QuranScreen extends StatelessWidget {
                     }
 
                     if (state is QuranIFailer) {
-                      return Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(20.r),
-                          child: Text(
-                            state.error,
-                            style: GoogleFonts.openSans(
-                              fontSize: 14.sp,
-                              color: Colors.red,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      return Text(
+                        state.error,
                       );
                     }
 
                     if (state is QuranSuccess) {
-                      final targetPage = startPage + index;
-
-                      if (state.currentPage != targetPage) {
+                      
+                      if (state.currentPage != startPage + index) {
                         return const Center(
                           child: CircularProgressIndicator(
                             color: Color(0xff1B5E40),
@@ -149,17 +121,17 @@ class QuranScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              state.ayahs[index].preBasmallah
-                                  ? 'بسم الله الرحمن الرحيم'
+                              preBasmallah == true &&
+                                      state.currentPage == startPage
+                                  ? ' بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ'
                                   : '',
                               style: GoogleFonts.amiri(
                                 fontSize: 22.sp,
-                                height: 2.2,
+                                height: 2.2.h,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xff1C1917),
                               ),
                             ),
-                            SizedBox(height: 5.h),
                             Container(
                               width: double.infinity,
                               padding: EdgeInsets.all(20.r),
@@ -230,7 +202,7 @@ class QuranScreen extends StatelessWidget {
                       );
                     }
 
-                    return const SizedBox.shrink();
+                    return const SizedBox();
                   },
                 );
               },
