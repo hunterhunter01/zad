@@ -18,11 +18,12 @@ class AzkarCategoriesCubit extends Cubit<AzkarCategoriesState> {
       emit(AzkarCategoriesFailer(error: e.toString()));
     }
   }
+
   Future<void> getDuaCategories() async {
     emit(AzkarCategoriesLoading());
     try {
       final categories = await AzkarCategoriesDataSource.getAllCategories();
-      
+
       final duaList = categories
           .where((category) => category.title.contains('دعاء'))
           .toList();
@@ -33,6 +34,3 @@ class AzkarCategoriesCubit extends Cubit<AzkarCategoriesState> {
     }
   }
 }
-
-
-

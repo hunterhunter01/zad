@@ -6,6 +6,7 @@ import 'package:zad/features/AzkarAndDua/presentation/screens/zikr_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zad/features/home/persentaion/screens/home_screen.dart';
+import 'package:zad/features/splash/presentation/screens/splash_screen.dart';
 
 
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       
 
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen()),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen()),
     );
   }
 }

@@ -19,7 +19,7 @@ class DuaCategoriesScreen extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           Padding(
-            padding:  EdgeInsets.all(10.r),
+            padding: EdgeInsets.all(10.r),
             child: Text(
               ' الأدعية',
               style: GoogleFonts.amiri(
@@ -46,8 +46,7 @@ class DuaCategoriesScreen extends StatelessWidget {
               return Text(state.error);
             }
             if (state is AzkarCategoriesSuccess) {
-              
-              
+              print(state.categories.length);
               return GridView.builder(
                 padding: EdgeInsets.all(15.r),
                 itemCount: state.categories.length,
@@ -55,7 +54,7 @@ class DuaCategoriesScreen extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 14.h,
                   crossAxisSpacing: 14.w,
-                   childAspectRatio: 0.64,
+                  childAspectRatio: 0.64,
                 ),
                 itemBuilder: (context, index) {
                   return InkWell(
@@ -70,8 +69,14 @@ class DuaCategoriesScreen extends StatelessWidget {
                         ),
                       );
                     },
-                     child: AzkarAndDuaCategoryCard(category: AzkarCategoryModel(number: state.categories[index].number, title: state.categories[index].title, count: state.categories[index].count, translate: state.categories[index].translate))
-                   
+                    child: AzkarAndDuaCategoryCard(
+                      category: AzkarCategoryModel(
+                        number: state.categories[index].number,
+                        title: state.categories[index].title,
+                        count: state.categories[index].count,
+                        translate: state.categories[index].translate,
+                      ),
+                    ),
                   );
                 },
               );

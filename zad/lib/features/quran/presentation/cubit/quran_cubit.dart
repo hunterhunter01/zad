@@ -3,7 +3,6 @@ import 'package:zad/features/quran/data_source/data/quran_data_source.dart';
 import 'package:zad/features/quran/data_source/models/quran_model.dart';
 import 'package:zad/features/quran/presentation/cubit/quran_states.dart';
 
-
 class QuranCubit extends Cubit<QuranStates> {
   QuranCubit() : super(QuranInitial());
   Future<void> getPage(int pageNumber) async {
@@ -16,17 +15,5 @@ class QuranCubit extends Cubit<QuranStates> {
     }
   }
 
-// List<QuranModel> getAyahsForSurah(List<QuranModel> ayahs, int suhraNumber) {
-//     return ayahs.where((ayah) => ayah.chapterId == suhraNumber).toList();
-//   }
 
-//   String extractAyahNumber(String verseKey) {
-//     return verseKey.split(':').last;
-//   }
-  
-
-
-
-  
-  
 }
