@@ -287,10 +287,12 @@ Please check the repository for the latest licensing information.
 **Zad (زاد)** means *provision* or *sustenance for a journey*.
 
 In the context of the application, it represents the spiritual provisions we carry throughout our journey in life:
+<div  dir="rtl">
 
-> **﴿وَتَزَوَّدُوا فَإِنَّ خَيْرَ الزَّادِ التَّقْوَىٰ﴾**
-> سورة البقرة الاية 197
+### «وَتَزَوَّدُوا فَإِنَّ خَيْرَ الزَّادِ التَّقْوَىٰ»
+*سورة البقرة - الآية 197*
 
+</div>
 ---
 
 <p align="center">
@@ -298,7 +300,7 @@ In the context of the application, it represents the spiritual provisions we car
 </p>
 
 <p align="center">
-  <strong>🌙 Zad | زَاد</strong>
+  <strong>🌙 Zad | زاد</strong>
   <br>
   <em>Your companion for daily remembrance and worship.</em>
 </p>
