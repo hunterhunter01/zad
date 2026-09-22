@@ -1,4 +1,4 @@
-# 🌙 Zad | زَاد
+# 🌙 Zad | زاد
 
 <p align="center">
   <strong>A modern Islamic companion for your daily spiritual journey.</strong>
@@ -24,11 +24,11 @@
 
 ## 📖 About Zad
 
-**Zad (زَاد)** is a Flutter-based Islamic mobile application designed to help Muslims maintain their daily spiritual routines through a clean, simple, and modern experience.
+**Zad (زاد)** is a Flutter-based Islamic mobile application designed to help Muslims maintain their daily spiritual routines through a clean, simple, and modern experience.
 
 The app brings together essential Islamic resources in one place, including the **Holy Quran, daily Azkar, Duas, and the 99 Names of Allah**, with additional features planned for future releases.
 
-> **زَاد — رفيقك في طريق الطاعة 🤍**
+> **زاد — رفيقك في طريق الطاعة 🤍**
 
 ---
 
