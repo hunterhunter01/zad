@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+  <img width="180"  alt="splash screen" src="https://github.com/user-attachments/assets/1e485482-2a4d-49f4-b673-bb67de072b9a" />
+</p>
+
+<p align="center">
   <img src="https://github.com/user-attachments/assets/c0e565c8-a228-4cbc-9915-0a8693e9f97d" width="180" alt="Zad Home Screen" />
   <img src="https://github.com/user-attachments/assets/3cb7acf9-9de0-4d84-9126-9dc75bdbf62a" width="180" alt="Zad Names of Allah Screen" />
   <img src="https://github.com/user-attachments/assets/66048e91-b73c-455c-961c-9361d6488574" width="180" alt="Zad Quran Screen" />
